@@ -1,85 +1,1224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>English Bootcamp – Adaptive Practice</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NCLEX Bootcamp</title>
+<meta name="description" content="NCLEX Bootcamp — master the New Generation NCLEX with computer adaptive tests, tutor mode, and full exam simulations." />
 <style>
-:root{--bg:#f6f7fb;--card:#fff;--ink:#16213a;--mut:#5d6985;--line:#e2e6f0;--pri:#2f5bea;--pri2:#e8eeff;--ok:#12805c;--okbg:#e2f6ee;--bad:#c0392b;--badbg:#fdeceb;--warn:#a96a00;--warnbg:#fff3d9;--tut:#7a3ff2;--exam:#d9480f;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--card:#171f35;--ink:#eaf0ff;--mut:#9aa8c9;--line:#2a3555;--pri:#6f93ff;--pri2:#1d2a55;--ok:#4cd6a0;--okbg:#10372c;--bad:#ff8a7a;--badbg:#3d1b1b;--warn:#ffc864;--warnbg:#3a2d10;--tut:#b18cff;--exam:#ff9a66}}
-:root[data-theme="dark"]{--bg:#0e1424;--card:#171f35;--ink:#eaf0ff;--mut:#9aa8c9;--line:#2a3555;--pri:#6f93ff;--pri2:#1d2a55;--ok:#4cd6a0;--okbg:#10372c;--bad:#ff8a7a;--badbg:#3d1b1b;--warn:#ffc864;--warnbg:#3a2d10;--tut:#b18cff;--exam:#ff9a66}
-*{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:860px;margin:0 auto;padding:16px}
-header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 4px}
-.logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;cursor:pointer}
-.logo span{color:var(--pri)}
-.hero{padding:28px 0 12px}
-.hero h1{font-size:clamp(1.8rem,6vw,2.8rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
-.hero p{color:var(--mut);max-width:560px;margin:0}
-.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-.mode{border-top:5px solid var(--c);display:flex;flex-direction:column;gap:8px}
-.mode h3{margin:0}.mode p{margin:0;color:var(--mut);font-size:.95rem;flex:1}
-.mode ul{margin:0;padding-left:18px;color:var(--mut);font-size:.9rem}
-button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 16px;background:var(--pri);color:#fff;font-weight:600}
-button.ghost{background:var(--pri2);color:var(--pri)}
-button:disabled{opacity:.45;cursor:not-allowed}
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 18px}
-.pill{background:var(--pri2);color:var(--pri);border-radius:99px;padding:4px 12px;font-size:.85rem;font-weight:600}
-.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:10px 0}
-.bar i{display:block;height:100%;background:var(--pri);transition:width .3s}
-.qtext{font-size:1.15rem;font-weight:600;margin:10px 0 14px}
-.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);margin:8px 0;padding:12px 14px;font-weight:500}
-.opt:hover{border-color:var(--pri)}
-.opt.sel{border-color:var(--pri);background:var(--pri2)}
-.opt.ok{border-color:var(--ok);background:var(--okbg)}
-.opt.bad{border-color:var(--bad);background:var(--badbg)}
-.note{border-radius:12px;padding:12px 14px;margin:12px 0;font-size:.95rem}
-.note.hint{background:var(--warnbg);color:var(--warn)}
-.note.good{background:var(--okbg);color:var(--ok)}
-.note.err{background:var(--badbg);color:var(--bad)}
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
-.sp{flex:1}
-.timer{font-variant-numeric:tabular-nums;font-weight:800;color:var(--exam);font-size:1.1rem}
-.nav{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
-.nav button{width:36px;height:36px;padding:0;background:var(--card);color:var(--ink);border:2px solid var(--line)}
-.nav .done{background:var(--pri2);border-color:var(--pri)}
-.nav .cur{border-color:var(--exam)}
-.nav .flag{outline:3px solid var(--warn)}
-.big{font-size:3rem;font-weight:800;color:var(--pri);line-height:1}
-select{font:inherit;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-table{width:100%;border-collapse:collapse;font-size:.92rem}
-td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left}
-.hide{display:none}
-footer{color:var(--mut);font-size:.85rem;text-align:center;padding:24px 0}
+  /* ===================== BASE ===================== */
+  :root{
+    --ink:#0b1f2a;
+    --ink-soft:#43606f;
+    --brand:#0e8f8f;
+    --brand-2:#0b6bcb;
+    --accent:#ffb020;
+    --bg:#f4f8fa;
+    --card:#ffffff;
+    --line:#dbe6ec;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(11,31,42,.08);
+    --max:1140px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em;}
+  p{margin:0;}
+
+  .container{
+    width:100%;
+    max-width:var(--max);
+    margin-inline:auto;
+    padding-inline:24px;
+  }
+
+  .section{padding:80px 0;}
+  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
+
+  .eyebrow{
+    display:inline-block;
+    font-size:.76rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--brand);
+    margin-bottom:14px;
+  }
+
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+    margin-bottom:14px;
+  }
+
+  .section-head p{color:var(--ink-soft);font-size:1.02rem;}
+
+  /* ===================== BUTTONS ===================== */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 24px;
+    border-radius:999px;
+    font-size:.95rem;
+    font-weight:600;
+    font-family:inherit;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+  }
+
+  .btn-primary{
+    background:linear-gradient(135deg, var(--brand), var(--brand-2));
+    color:#fff;
+    box-shadow:0 8px 20px rgba(11,107,203,.25);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px rgba(11,107,203,.32);
+  }
+
+  .btn-ghost{
+    background:#fff;
+    border-color:var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{
+    border-color:var(--brand);
+    color:var(--brand);
+    transform:translateY(-2px);
+  }
+
+  .btn-sm{padding:9px 18px;font-size:.86rem;}
+
+  /* ===================== HEADER ===================== */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    height:72px;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.12rem;
+    font-weight:800;
+    letter-spacing:-.03em;
+    color:var(--ink);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  .logo-mark{
+    width:36px;
+    height:36px;
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg, var(--brand), var(--brand-2));
+    color:#fff;
+    font-size:.86rem;
+    font-weight:800;
+    letter-spacing:0;
+    box-shadow:0 6px 14px rgba(14,143,143,.32);
+  }
+
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+
+  .nav a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:.93rem;
+    font-weight:500;
+    transition:color .15s ease;
+  }
+  .nav a:hover{color:var(--brand);}
+
+  .header-actions{display:flex;align-items:center;gap:12px;}
+
+  /* ===================== HERO ===================== */
+  .hero{
+    padding:80px 0 72px;
+    background:
+      radial-gradient(900px 480px at 85% -15%, rgba(14,143,143,.14), transparent 62%),
+      radial-gradient(760px 420px at -5% 5%, rgba(11,107,203,.12), transparent 60%);
+    overflow:hidden;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.25rem);
+    margin-bottom:20px;
+  }
+
+  .hero h1 .grad{
+    background:linear-gradient(100deg, var(--brand), var(--brand-2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .hero-lead{
+    color:var(--ink-soft);
+    font-size:1.06rem;
+    max-width:520px;
+    margin-bottom:30px;
+  }
+
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:38px;
+  }
+
+  .hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:36px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+  }
+
+  .stat b{
+    display:block;
+    font-size:1.4rem;
+    letter-spacing:-.03em;
+  }
+  .stat span{
+    font-size:.82rem;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-weight:600;
+  }
+
+  /* Hero mock card */
+  .hero-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 24px 60px rgba(11,31,42,.12);
+    position:relative;
+  }
+
+  .hero-card::after{
+    content:"";
+    position:absolute;
+    inset:auto -30px -30px auto;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(14,143,143,.18), transparent 70%);
+    z-index:-1;
+  }
+
+  .hc-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:.82rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .hc-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#19c37d;
+    box-shadow:0 0 0 0 rgba(25,195,125,.5);
+    animation:pulse 2s infinite;
+  }
+
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(25,195,125,.45);}
+    70%{box-shadow:0 0 0 10px rgba(25,195,125,0);}
+    100%{box-shadow:0 0 0 0 rgba(25,195,125,0);}
+  }
+
+  .hc-pill{
+    margin-left:auto;
+    font-size:.7rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--brand);
+    background:rgba(14,143,143,.1);
+    border-radius:999px;
+    padding:4px 10px;
+  }
+
+  .hc-stem{
+    font-size:.94rem;
+    font-weight:600;
+    margin:18px 0 16px;
+  }
+
+  .hc-options{
+    list-style:none;
+    margin:0 0 20px;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+
+  .hc-options li{
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:11px 14px;
+    font-size:.87rem;
+    color:var(--ink-soft);
+    background:#fbfdfe;
+    transition:.18s ease;
+  }
+
+  .hc-options li:hover{border-color:#b9cfda;}
+
+  .hc-options li.is-selected{
+    border-color:var(--brand);
+    background:rgba(14,143,143,.07);
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  .hc-foot{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:.78rem;
+    color:var(--ink-soft);
+  }
+
+  .hc-foot b{color:var(--ink);}
+
+  .hc-up{
+    color:var(--brand);
+    font-weight:700;
+    white-space:nowrap;
+  }
+
+  /* ===================== ITEM TYPE CHIPS ===================== */
+  .types{
+    background:#fff;
+    border-block:1px solid var(--line);
+    padding:30px 0;
+  }
+
+  .types-label{
+    text-align:center;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+
+  .type-chips{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+
+  .type-chips li{
+    font-size:.83rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:7px 16px;
+    transition:.18s ease;
+  }
+
+  .type-chips li:hover{
+    color:var(--brand);
+    border-color:var(--brand);
+    background:#fff;
+  }
+
+  /* ===================== MODE CARDS ===================== */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+    align-items:stretch;
+  }
+
+  .mode-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 28px;
+    box-shadow:var(--shadow);
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+
+  .mode-card::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:4px;
+    border-radius:var(--radius) var(--radius) 0 0;
+    background:linear-gradient(90deg, var(--brand), var(--brand-2));
+    opacity:0;
+    transition:opacity .22s ease;
+  }
+
+  .mode-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 46px rgba(11,31,42,.13);
+    border-color:#c4dbe4;
+  }
+  .mode-card:hover::before{opacity:1;}
+
+  .mode-icon{
+    width:48px;
+    height:48px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:rgba(14,143,143,.11);
+    color:var(--brand);
+    font-size:1.25rem;
+  }
+
+  .mode-card h3{font-size:1.18rem;}
+
+  .mode-card > p{
+    color:var(--ink-soft);
+    font-size:.92rem;
+  }
+
+  .feature-list{
+    list-style:none;
+    margin:4px 0 8px;
+    padding:0;
+    display:grid;
+    gap:10px;
+    font-size:.9rem;
+    color:var(--ink-soft);
+  }
+
+  .feature-list li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    line-height:1.45;
+  }
+
+  .feature-list li::before{
+    content:"✓";
+    flex:none;
+    font-weight:800;
+    color:var(--brand);
+  }
+
+  .mode-card .btn{margin-top:auto;}
+
+  .mode-tag{
+    position:absolute;
+    top:22px;
+    right:22px;
+    font-size:.66rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--brand-2);
+    background:rgba(11,107,203,.1);
+    border-radius:999px;
+    padding:4px 10px;
+  }
+
+  /* ===================== DEMO / QUESTION ===================== */
+  .demo{
+    background:#fff;
+    border-block:1px solid var(--line);
+  }
+
+  .demo-shell{
+    max-width:900px;
+    margin-inline:auto;
+  }
+
+  .demo-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    padding:6px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:999px;
+    width:fit-content;
+    margin:0 auto 28px;
+  }
+
+  .tab{
+    font-family:inherit;
+    font-size:.87rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    background:transparent;
+    border:none;
+    border-radius:999px;
+    padding:10px 20px;
+    cursor:pointer;
+    transition:.18s ease;
+    white-space:nowrap;
+  }
+
+  .tab:hover{color:var(--ink);}
+
+  .tab.is-active{
+    background:#fff;
+    color:var(--brand-2);
+    box-shadow:0 4px 12px rgba(11,31,42,.1);
+  }
+
+  .qcard{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:28px;
+  }
+
+  .qcard-top{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:14px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:20px;
+  }
+
+  .badge{
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#fff;
+    background:linear-gradient(135deg, var(--brand), var(--brand-2));
+    border-radius:999px;
+    padding:5px 12px;
+  }
+
+  .qcard-meta{
+    margin-left:auto;
+    font-size:.82rem;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .qcard-meta b{color:var(--ink);}
+
+  /* Mode-specific bits — hidden unless the card has that mode */
+  .only-cat, .only-tutor, .only-exam{display:none;}
+
+  [data-mode="cat"] .only-cat,
+  [data-mode="tutor"] .only-tutor,
+  [data-mode="exam"] .only-exam{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+  }
+
+  .stem{
+    font-size:.97rem;
+    margin-bottom:20px;
+  }
+
+  .stem strong{color:var(--brand-2);}
+
+  .matrix{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.87rem;
+    margin-bottom:22px;
+  }
+
+  .matrix th,
+  .matrix td{
+    border:1px solid var(--line);
+    padding:11px 12px;
+    text-align:center;
+    vertical-align:middle;
+  }
+
+  .matrix thead th{
+    background:var(--bg);
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+
+  .matrix th:first-child,
+  .matrix td:first-child{
+    text-align:left;
+    font-weight:500;
+    color:var(--ink);
+  }
+
+  .matrix tbody tr:hover{background:#fafdfe;}
+
+  .matrix input[type="radio"]{
+    appearance:none;
+    -webkit-appearance:none;
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    border:2px solid #c3d4dd;
+    background:#fff;
+    cursor:pointer;
+    transition:.15s ease;
+    display:inline-block;
+    vertical-align:middle;
+  }
+
+  .matrix input[type="radio"]:hover{border-color:var(--brand);}
+
+  .matrix input[type="radio"]:checked{
+    border-color:var(--brand);
+    background:radial-gradient(circle, var(--brand) 0 45%, #fff 46%);
+  }
+
+  .qcard-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+
+  .qcard-actions .spacer{margin-left:auto;}
+
+  .rationale{
+    display:none;
+    margin-top:20px;
+    background:rgba(14,143,143,.06);
+    border:1px solid rgba(14,143,143,.25);
+    border-left:4px solid var(--brand);
+    border-radius:12px;
+    padding:18px 20px;
+    font-size:.89rem;
+    color:var(--ink-soft);
+  }
+
+  [data-mode="tutor"] .rationale{display:block;}
+
+  .rationale h4{
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--brand);
+    margin-bottom:8px;
+  }
+
+  .rationale p + p{margin-top:10px;}
+
+  /* ===================== BOOTCAMP PLAN ===================== */
+  .plan{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+  }
+
+  .plan-step{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+
+  .plan-step:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+  }
+
+  .step-num{
+    display:grid;
+    place-items:center;
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    background:linear-gradient(135deg, var(--brand), var(--brand-2));
+    color:#fff;
+    font-weight:800;
+    font-size:.9rem;
+    margin-bottom:16px;
+  }
+
+  .plan-step h3{font-size:1rem;margin-bottom:8px;}
+  .plan-step p{font-size:.87rem;color:var(--ink-soft);}
+
+  /* ===================== CTA ===================== */
+  .cta{
+    padding:76px 0;
+    background:linear-gradient(135deg, #0b2b3a, #0b1f2a 55%, #103b52);
+    color:#fff;
+    text-align:center;
+  }
+
+  .cta h2{
+    font-size:clamp(1.7rem, 3.2vw, 2.4rem);
+    margin-bottom:16px;
+  }
+
+  .cta p{
+    color:rgba(255,255,255,.72);
+    max-width:560px;
+    margin:0 auto 32px;
+    font-size:1.02rem;
+  }
+
+  .cta-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+  }
+
+  .cta .btn-ghost{
+    background:transparent;
+    border-color:rgba(255,255,255,.35);
+    color:#fff;
+  }
+  .cta .btn-ghost:hover{
+    border-color:#fff;
+    color:#fff;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .site-footer{
+    background:#081820;
+    color:rgba(255,255,255,.62);
+    padding:52px 0 30px;
+    font-size:.88rem;
+  }
+
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr repeat(3, 1fr);
+    gap:36px;
+    padding-bottom:34px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+
+  .site-footer .logo{color:#fff;}
+
+  .footer-about p{
+    margin-top:14px;
+    max-width:280px;
+    line-height:1.65;
+  }
+
+  .footer-col h4{
+    color:#fff;
+    font-size:.8rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+
+  .footer-col ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:9px;
+  }
+
+  .footer-col a{
+    color:rgba(255,255,255,.62);
+    text-decoration:none;
+    transition:color .15s ease;
+  }
+  .footer-col a:hover{color:#fff;}
+
+  .footer-bottom{
+    padding-top:24px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+    font-size:.8rem;
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:44px;}
+    .cards{grid-template-columns:1fr;}
+    .plan{grid-template-columns:repeat(2, 1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .nav{display:none;}
+  }
+
+  @media (max-width:640px){
+    .section{padding:60px 0;}
+    .hero{padding:56px 0 52px;}
+    .hero-stats{gap:26px;}
+    .plan{grid-template-columns:1fr;}
+    .qcard{padding:20px;}
+    .matrix{font-size:.8rem;}
+    .matrix th, .matrix td{padding:8px 6px;}
+    .qcard-meta{margin-left:0;width:100%;}
+    .footer-grid{grid-template-columns:1fr;}
+    .header-actions .btn{padding:10px 16px;font-size:.85rem;}
+    .demo-tabs{width:100%;border-radius:16px;}
+    .tab{flex:1 1 auto;padding:10px 12px;font-size:.8rem;}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-<header><div class="logo" onclick="show('home')">English<span>Bootcamp</span></div><button class="ghost" onclick="show('home')">Home</button></header>
 
-<section id="home">
-  <div class="hero"><h1>Train your English like an athlete.</h1><p>Grammar, vocabulary and reading drills in three modes: find your level, learn with a coach, or prove it under exam conditions.</p></div>
-  <div class="grid">
-    <div class="card mode" style="--c:var(--pri)"><h3>Adaptive Test</h3><p>Questions get harder when you are right and easier when you are wrong. Ends with an estimated CEFR level.</p><ul><li>10 questions</li><li>Level estimate A2–C2</li></ul><button onclick="startCAT()">Find my level</button></div>
-    <div class="card mode" style="--c:var(--tut)"><h3>Tutor Mode</h3><p>Instant feedback, hints on demand and a clear explanation after every answer. No timer, no pressure.</p><ul><li>Pick a topic</li><li>Hints and rules</li></ul><button style="background:var(--tut)" onclick="startTutor()">Start learning</button></div>
-    <div class="card mode" style="--c:var(--exam)"><h3>Exam Mode</h3><p>Timed, no feedback until you submit. Flag questions, move around freely, then review by topic.</p><ul><li>12 questions, 10 minutes</li><li>Full review</li></ul><button style="background:var(--exam)" onclick="startExam()">Take the exam</button></div>
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">NB</span>
+      NCLEX Bootcamp
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#modes">Test Modes</a>
+      <a href="#demo">Try a Question</a>
+      <a href="#bootcamp">Bootcamp Plan</a>
+      <a href="#item-types">NGN Item Types</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="#demo">Log in</a>
+      <a class="btn btn-primary btn-sm" href="#cta">Start Free</a>
+    </div>
   </div>
-</section>
+</header>
 
-<section id="view" class="hide"></section>
-<footer>Practice tool with a small sample bank. Add more questions to the <code>BANK</code> array.</footer>
-</div>
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">New Generation NCLEX Prep</span>
+        <h1>Train like the <span class="grad">real exam</span> — then pass it.</h1>
+        <p class="hero-lead">
+          NCLEX Bootcamp drills you on the Next Generation NCLEX with a true
+          computer adaptive engine, instant tutor-mode rationales, and
+          full-length exam simulations built around clinical judgment.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#demo">Start a CAT session</a>
+          <a class="btn btn-ghost" href="#modes">Compare test modes</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><b>3,200+</b><span>NGN items</span></div>
+          <div class="stat"><b>85–150</b><span>Adaptive length</span></div>
+          <div class="stat"><b>6</b><span>Case studies per test</span></div>
+        </div>
+      </div>
+
+      <!-- Mock adaptive card -->
+      <div class="hero-card" aria-hidden="true">
+        <div class="hc-head">
+          <span class="hc-dot"></span>
+          <span>Live CAT session</span>
+          <span class="hc-pill">Adaptive</span>
+        </div>
+
+        <p class="hc-stem">
+          The nurse is caring for a client with suspected sepsis. Which action
+          should the nurse take first?
+        </p>
+
+        <ul class="hc-options">
+          <li class="is-selected">Obtain blood cultures before antibiotics</li>
+          <li>Administer prescribed IV antibiotics</li>
+          <li>Place the client in high-Fowler's position</li>
+          <li>Recheck serum lactate in 2 hours</li>
+        </ul>
+
+        <div class="hc-foot">
+          <span>Ability estimate <b>θ +0.82</b></span>
+          <span class="hc-up">▲ difficulty rising</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ITEM TYPES ===================== -->
+  <section class="types" id="item-types">
+    <div class="container">
+      <p class="types-label">Every New Generation item type, covered</p>
+      <ul class="type-chips">
+        <li>Case Studies</li>
+        <li>Bow-Tie</li>
+        <li>Matrix / Grid</li>
+        <li>Highlight Text</li>
+        <li>Drop-Down Cloze</li>
+        <li>Extended Multiple Response</li>
+        <li>Extended Drag-and-Drop</li>
+        <li>Trend &amp; Graphic</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== MODES ===================== -->
+  <section class="section" id="modes">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Three ways to train</span>
+        <h2>Pick the mode that fits today's goal</h2>
+        <p>Whether you're learning the content, testing your readiness, or rehearsing exam day — there's a mode for it.</p>
+      </div>
+
+      <div class="cards">
+
+        <!-- CAT -->
+        <article class="mode-card">
+          <div class="mode-icon" aria-hidden="true">◎</div>
+          <h3>Computer Adaptive Test</h3>
+          <p>
+            Our CAT engine mirrors the real NCLEX scoring model — every correct
+            answer raises difficulty, every miss lowers it, until your ability
+            estimate stabilizes.
+          </p>
+          <ul class="feature-list">
+            <li>Item difficulty adapts after every question</li>
+            <li>Live ability estimate (θ) and confidence band</li>
+            <li>Stops at 85 or 150 items — just like the real thing</li>
+            <li>Pass-likelihood report after each session</li>
+          </ul>
+          <a class="btn btn-primary" href="#demo">Launch CAT</a>
+        </article>
+
+        <!-- TUTOR -->
+        <article class="mode-card">
+          <span class="mode-tag">Most popular</span>
+          <div class="mode-icon" aria-hidden="true">✎</div>
+          <h3>Tutor Mode</h3>
+          <p>
+            Learn as you go. Submit one question at a time and get the correct
+            answer, full rationale, and clinical-judgment reasoning immediately.
+          </p>
+          <ul class="feature-list">
+            <li>Instant feedback with rationale for every option</li>
+            <li>NGN-specific "why this is the right layer" breakdowns</li>
+            <li>Pause, bookmark, and build custom quizzes</li>
+            <li>Untimed — focus on understanding, not speed</li>
+          </ul>
+          <a class="btn btn-ghost" href="#demo">Try Tutor Mode</a>
+        </article>
+
+        <!-- EXAM -->
+        <article class="mode-card">
+          <div class="mode-icon" aria-hidden="true">⏱</div>
+          <h3>Exam Mode</h3>
+          <p>
+            A full dress rehearsal. Timed, non-adaptive, no feedback, and a
+            question navigator — built to replicate the pressure of test day.
+          </p>
+          <ul class="feature-list">
+            <li>Timed sessions with a visible countdown clock</li>
+            <li>No rationales until the exam is submitted</li>
+            <li>Flag &amp; review navigator across all items</li>
+            <li>Full performance report by Client Needs category</li>
+          </ul>
+          <a class="btn btn-ghost" href="#demo">Start Exam</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEMO QUESTION ===================== -->
+  <section class="section demo" id="demo">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Interactive preview</span>
+        <h2>See how each mode behaves</h2>
+        <p>Switch modes below — the same NGN case study question renders differently in CAT, Tutor, and Exam mode.</p>
+      </div>
+
+      <div class="demo-shell">
+        <div class="demo-tabs" role="tablist" aria-label="Test mode">
+          <button class="tab is-active" data-mode="cat" role="tab" aria-selected="true">Computer Adaptive</button>
+          <button class="tab" data-mode="tutor" role="tab" aria-selected="false">Tutor Mode</button>
+          <button class="tab" data-mode="exam" role="tab" aria-selected="false">Exam Mode</button>
+        </div>
+
+        <div class="qcard" data-mode="cat">
+          <div class="qcard-top">
+            <span class="badge">NGN Case Study</span>
+            <div class="qcard-meta">
+              <span class="only-cat">Item 34 · Difficulty <b>Hard</b> · Ability θ +0.82</span>
+              <span class="only-exam">⏱ <b id="examTimer">04:12</b> remaining</span>
+              <span class="only-tutor">✓ Tutor feedback enabled</span>
+            </div>
+          </div>
+
+          <p class="stem">
+            A 68-year-old client is admitted to the medical unit with a
+            suspected urinary tract infection. The client is confused, febrile,
+            and hypotensive. <strong>For each intervention below, click to
+            specify whether it is anticipated, contraindicated, or
+            nonessential.</strong>
+          </p>
+
+          <table class="matrix">
+            <thead>
+              <tr>
+                <th scope="col">Nursing Intervention</th>
+                <th scope="col">Anticipated</th>
+                <th scope="col">Contraindicated</th>
+                <th scope="col">Nonessential</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Obtain blood cultures before starting antibiotics</td>
+                <td><input type="radio" name="r1" aria-label="Anticipated"></td>
+                <td><input type="radio" name="r1" aria-label="Contraindicated"></td>
+                <td><input type="radio" name="r1" aria-label="Nonessential"></td>
+              </tr>
+              <tr>
+                <td>Restrict oral fluids to 500 mL per day</td>
+                <td><input type="radio" name="r2" aria-label="Anticipated"></td>
+                <td><input type="radio" name="r2" aria-label="Contraindicated"></td>
+                <td><input type="radio" name="r2" aria-label="Nonessential"></td>
+              </tr>
+              <tr>
+                <td>Initiate isotonic IV fluid resuscitation per protocol</td>
+                <td><input type="radio" name="r3" aria-label="Anticipated"></td>
+                <td><input type="radio" name="r3" aria-label="Contraindicated"></td>
+                <td><input type="radio" name="r3" aria-label="Nonessential"></td>
+              </tr>
+              <tr>
+                <td>Reassess mental status and vital signs every 4 hours</td>
+                <td><input type="radio" name="r4" aria-label="Anticipated"></td>
+                <td><input type="radio" name="r4" aria-label="Contraindicated"></td>
+                <td><input type="radio" name="r4" aria-label="Nonessential"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="qcard-actions">
+            <button class="btn btn-ghost btn-sm" type="button">⚑ Flag for review</button>
+            <span class="spacer"></span>
+            <button class="btn btn-primary btn-sm" type="button">Submit answer</button>
+          </div>
+
+          <div class="rationale">
+            <h4>Tutor Mode Rationale</h4>
+            <p>
+              <strong>Obtain blood cultures — Anticipated.</strong> Cultures must
+              be drawn before the first antibiotic dose to preserve diagnostic
+              accuracy, but they should never delay antibiotics in a
+              hemodynamically unstable client.
+            </p>
+            <p>
+              <strong>Fluid restriction — Contraindicated.</strong> Sepsis
+              requires aggressive isotonic fluid resuscitation; restriction
+              worsens hypoperfusion and end-organ damage.
+            </p>
+            <p>
+              <strong>Reassessing every 4 hours — Nonessential.</strong>
+              Frequent reassessment is expected, but a 4-hour interval is too
+              infrequent for a client with suspected sepsis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BOOTCAMP PLAN ===================== -->
+  <section class="section" id="bootcamp">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The 4-week bootcamp</span>
+        <h2>From baseline to exam-ready</h2>
+        <p>A structured path that mixes adaptive testing, tutor learning, and timed simulation.</p>
+      </div>
+
+      <div class="plan">
+        <article class="plan-step">
+          <div class="step-num">1</div>
+          <h3>Baseline CAT</h3>
+          <p>Take a full adaptive diagnostic to establish your ability estimate and spot weak Client Needs categories.</p>
+        </article>
+
+        <article class="plan-step">
+          <div class="step-num">2</div>
+          <h3>Tutor Deep-Dive</h3>
+          <p>Work through NGN case studies in tutor mode, reading every rationale until clinical judgment clicks.</p>
+        </article>
+
+        <article class="plan-step">
+          <div class="step-num">3</div>
+          <h3>Exam Simulation</h3>
+          <p>Run timed exam-mode sessions weekly to build stamina, pacing, and comfort with the untimed-feeling format.</p>
+        </article>
+
+        <article class="plan-step">
+          <div class="step-num">4</div>
+          <h3>Readiness Check</h3>
+          <p>Finish with a CAT pass-likelihood report and a targeted review list for the final 72 hours.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <h2>Ready to boot camp your NCLEX?</h2>
+      <p>Start free with a 20-item adaptive set and a full tutor-mode case study. No card required.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="#demo">Start free practice</a>
+        <a class="btn btn-ghost" href="#modes">Explore test modes</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="logo" href="#top">
+          <span class="logo-mark">NB</span>
+          NCLEX Bootcamp
+        </a>
+        <p>Adaptive practice, tutor-mode rationales, and exam simulations built for the Next Generation NCLEX.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#modes">Computer Adaptive Test</a></li>
+          <li><a href="#modes">Tutor Mode</a></li>
+          <li><a href="#modes">Exam Mode</a></li>
+          <li><a href="#item-types">NGN Item Types</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Bootcamp</h4>
+        <ul>
+          <li><a href="#bootcamp">4-Week Plan</a></li>
+          <li><a href="#cta">Study Groups</a></li>
+          <li><a href="#cta">Readiness Report</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#top">About</a></li>
+          <li><a href="#top">Contact</a></li>
+          <li><a href="#top">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 NCLEX Bootcamp. Not affiliated with NCSBN®.</span>
+      <span>NCLEX® is a registered trademark of the National Council of State Boards of Nursing.</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-const BANK=[
-{t:"Grammar",d:1,q:"She ___ to school every day.",o:["go","goes","going","gone"],a:1,h:"Third person singular, present simple.",e:"With he/she/it in the present simple, add -s or -es: she goes."},
-{t:"Grammar",d:1,q:"There ___ two apples on the table.",o:["is","am","are","be"],a:2,h:"Is the noun singular or plural?",e:"“Apples” is plural, so we use “are”."},
-{t:"Vocabulary",d:1,q:"The opposite of “cheap” is:",o:["small","expensive","slow","early"],a:1,h:"Think about price.",e:"Cheap means low price; expensive means high price."},
-{t:"Grammar",d:2,q:"I have lived here ___ 2019.",o:["for","since","during","from"],a:1,h:"Is 2019 a point in time or a duration?",e:"Use “since” with a starting point and “for” with a length of time."},
-{t:"Grammar",d:2,q:"If it rains tomorrow, we ___ at home.",o:["stay","stayed","will stay","would stay"],a:2,h:"First conditional: real future possibility.",e:"If + present simple, will + base verb."},
-{t:"Vocabulary",d:2,q:"Choose the word closest to “enormous”.",o:["tiny","huge","quiet","ancient"],a:1,h:"It describes size.",e:"Enormous and huge both mean very large."},
-{t:"Reading",d:2,q:"“Tom missed the bus, so he walked.” Why did Tom walk?",o:["He likes walking","The bus left without him","The bus was free",
+  /* ---- Mode switcher ---- */
+  const tabs = document.querySelectorAll('.tab');
+  const qcard = document.querySelector('.qcard');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      qcard.dataset.mode = tab.dataset.mode;
+    });
+  });
+
+  /* ---- Exam mode countdown ---- */
+  let remaining = 4 * 60 + 12;
+  const timerEl = document.getElementById('examTimer');
+
+  setInterval(() => {
+    if (remaining > 0) remaining--;
+    const m = String(Math.floor(remaining / 60)).padStart(2, '0');
+    const s = String(remaining % 60).padStart(2, '0');
+    timerEl.textContent = `${m}:${s}`;
+  }, 1000);
+</script>
+
+</body>
+</html>
