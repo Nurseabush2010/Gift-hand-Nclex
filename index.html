@@ -184,7 +184,7 @@ footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid
             <li>No rationales until the session ends</li>
             <li>Pass or fail projection after each session</li>
           </ul>
-          <a class="btn" href="#readiness">Start adaptive test</a>
+          <a class="btn" id="start-adaptive" href="#readiness">Start adaptive test</a>
         </article>
         <article class="mode tutor">
           <span class="tag">Learn as you go</span>
@@ -234,8 +234,7 @@ footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid
     </div>
     <div>
       <h4>Train</h4>
-      <adocument.getElementById('start-adaptive').addEventListener('click', function() { window.location.href = 'test.html'; });
- href="#modes">Computer Adaptive</a>
+      <a href="#modes">Computer Adaptive</a>
       <a href="#modes">Tutor mode</a>
       <a href="#readiness">Readiness check</a>
     </div>
@@ -250,10 +249,10 @@ footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid
 </footer>
 
 <script>
-//document.getElementById('start-adaptive').addEventListener('click', function() {
+// mobile menu
+document.getElementById('start-adaptive').addEventListener('click', function() {
     window.location.href = 'test.html';
 });
- mobile menu
 var menu=document.querySelector('.menu'),links=document.getElementById('links');
 menu.addEventListener('click',function(){var o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
 links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');menu.setAttribute('aria-expanded',false)}});
