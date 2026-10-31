@@ -1,1241 +1,290 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7N5HHLW9M4"></script>
-<script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7N5HHLW9M4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7N5HHLW9M4');
-</script> window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7N5HHLW9M4');
-</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NCLEX Bootcamp</title>
-<meta name="description" content="NCLEX Bootcamp — master the New Generation NCLEX with computer adaptive tests, tutor mode, and full exam simulations." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NCLEX Bootcamp – Practice, Time, Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ===================== BASE ===================== */
-  :root{
-    --ink:#0b1f2a;
-    --ink-soft:#43606f;
-    --brand:#0e8f8f;
-    --brand-2:#0b6bcb;
-    --accent:#ffb020;
-    --bg:#f4f8fa;
-    --card:#ffffff;
-    --line:#dbe6ec;
-    --radius:16px;
-    --shadow:0 10px 30px rgba(11,31,42,.08);
-    --max:1140px;
-  }
-
-  *{box-sizing:border-box;}
-
-  html{scroll-behavior:smooth;}
-
-  body{
-    margin:0;
-    font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color:var(--ink);
-    background:var(--bg);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em;}
-  p{margin:0;}
-
-  .container{
-    width:100%;
-    max-width:var(--max);
-    margin-inline:auto;
-    padding-inline:24px;
-  }
-
-  .section{padding:80px 0;}
-  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-
-  .eyebrow{
-    display:inline-block;
-    font-size:.76rem;
-    font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--brand);
-    margin-bottom:14px;
-  }
-
-  .section-head h2{
-    font-size:clamp(1.7rem, 3vw, 2.3rem);
-    margin-bottom:14px;
-  }
-
-  .section-head p{color:var(--ink-soft);font-size:1.02rem;}
-
-  /* ===================== BUTTONS ===================== */
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:13px 24px;
-    border-radius:999px;
-    font-size:.95rem;
-    font-weight:600;
-    font-family:inherit;
-    text-decoration:none;
-    border:1px solid transparent;
-    cursor:pointer;
-    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-  }
-
-  .btn-primary{
-    background:linear-gradient(135deg, var(--brand), var(--brand-2));
-    color:#fff;
-    box-shadow:0 8px 20px rgba(11,107,203,.25);
-  }
-  .btn-primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 14px 28px rgba(11,107,203,.32);
-  }
-
-  .btn-ghost{
-    background:#fff;
-    border-color:var(--line);
-    color:var(--ink);
-  }
-  .btn-ghost:hover{
-    border-color:var(--brand);
-    color:var(--brand);
-    transform:translateY(-2px);
-  }
-
-  .btn-sm{padding:9px 18px;font-size:.86rem;}
-
-  /* ===================== HEADER ===================== */
-  .site-header{
-    position:sticky;
-    top:0;
-    z-index:50;
-    background:rgba(255,255,255,.86);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line);
-  }
-
-  .header-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:24px;
-    height:72px;
-  }
-
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:1.12rem;
-    font-weight:800;
-    letter-spacing:-.03em;
-    color:var(--ink);
-    text-decoration:none;
-    white-space:nowrap;
-  }
-
-  .logo-mark{
-    width:36px;
-    height:36px;
-    border-radius:11px;
-    display:grid;
-    place-items:center;
-    background:linear-gradient(135deg, var(--brand), var(--brand-2));
-    color:#fff;
-    font-size:.86rem;
-    font-weight:800;
-    letter-spacing:0;
-    box-shadow:0 6px 14px rgba(14,143,143,.32);
-  }
-
-  .nav{
-    display:flex;
-    align-items:center;
-    gap:28px;
-  }
-
-  .nav a{
-    color:var(--ink-soft);
-    text-decoration:none;
-    font-size:.93rem;
-    font-weight:500;
-    transition:color .15s ease;
-  }
-  .nav a:hover{color:var(--brand);}
-
-  .header-actions{display:flex;align-items:center;gap:12px;}
-
-  /* ===================== HERO ===================== */
-  .hero{
-    padding:80px 0 72px;
-    background:
-      radial-gradient(900px 480px at 85% -15%, rgba(14,143,143,.14), transparent 62%),
-      radial-gradient(760px 420px at -5% 5%, rgba(11,107,203,.12), transparent 60%);
-    overflow:hidden;
-  }
-
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:56px;
-    align-items:center;
-  }
-
-  .hero h1{
-    font-size:clamp(2.1rem, 4.4vw, 3.25rem);
-    margin-bottom:20px;
-  }
-
-  .hero h1 .grad{
-    background:linear-gradient(100deg, var(--brand), var(--brand-2));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-  }
-
-  .hero-lead{
-    color:var(--ink-soft);
-    font-size:1.06rem;
-    max-width:520px;
-    margin-bottom:30px;
-  }
-
-  .hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    margin-bottom:38px;
-  }
-
-  .hero-stats{
-    display:flex;
-    flex-wrap:wrap;
-    gap:36px;
-    padding-top:26px;
-    border-top:1px solid var(--line);
-  }
-
-  .stat b{
-    display:block;
-    font-size:1.4rem;
-    letter-spacing:-.03em;
-  }
-  .stat span{
-    font-size:.82rem;
-    color:var(--ink-soft);
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    font-weight:600;
-  }
-
-  /* Hero mock card */
-  .hero-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:24px;
-    box-shadow:0 24px 60px rgba(11,31,42,.12);
-    position:relative;
-  }
-
-  .hero-card::after{
-    content:"";
-    position:absolute;
-    inset:auto -30px -30px auto;
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(14,143,143,.18), transparent 70%);
-    z-index:-1;
-  }
-
-  .hc-head{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:.82rem;
-    font-weight:600;
-    color:var(--ink-soft);
-    padding-bottom:16px;
-    border-bottom:1px solid var(--line);
-  }
-
-  .hc-dot{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:#19c37d;
-    box-shadow:0 0 0 0 rgba(25,195,125,.5);
-    animation:pulse 2s infinite;
-  }
-
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(25,195,125,.45);}
-    70%{box-shadow:0 0 0 10px rgba(25,195,125,0);}
-    100%{box-shadow:0 0 0 0 rgba(25,195,125,0);}
-  }
-
-  .hc-pill{
-    margin-left:auto;
-    font-size:.7rem;
-    font-weight:700;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--brand);
-    background:rgba(14,143,143,.1);
-    border-radius:999px;
-    padding:4px 10px;
-  }
-
-  .hc-stem{
-    font-size:.94rem;
-    font-weight:600;
-    margin:18px 0 16px;
-  }
-
-  .hc-options{
-    list-style:none;
-    margin:0 0 20px;
-    padding:0;
-    display:grid;
-    gap:10px;
-  }
-
-  .hc-options li{
-    border:1px solid var(--line);
-    border-radius:11px;
-    padding:11px 14px;
-    font-size:.87rem;
-    color:var(--ink-soft);
-    background:#fbfdfe;
-    transition:.18s ease;
-  }
-
-  .hc-options li:hover{border-color:#b9cfda;}
-
-  .hc-options li.is-selected{
-    border-color:var(--brand);
-    background:rgba(14,143,143,.07);
-    color:var(--ink);
-    font-weight:600;
-  }
-
-  .hc-foot{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    padding-top:16px;
-    border-top:1px solid var(--line);
-    font-size:.78rem;
-    color:var(--ink-soft);
-  }
-
-  .hc-foot b{color:var(--ink);}
-
-  .hc-up{
-    color:var(--brand);
-    font-weight:700;
-    white-space:nowrap;
-  }
-
-  /* ===================== ITEM TYPE CHIPS ===================== */
-  .types{
-    background:#fff;
-    border-block:1px solid var(--line);
-    padding:30px 0;
-  }
-
-  .types-label{
-    text-align:center;
-    font-size:.78rem;
-    font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:18px;
-  }
-
-  .type-chips{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-  }
-
-  .type-chips li{
-    font-size:.83rem;
-    font-weight:600;
-    color:var(--ink-soft);
-    background:var(--bg);
-    border:1px solid var(--line);
-    border-radius:999px;
-    padding:7px 16px;
-    transition:.18s ease;
-  }
-
-  .type-chips li:hover{
-    color:var(--brand);
-    border-color:var(--brand);
-    background:#fff;
-  }
-
-  /* ===================== MODE CARDS ===================== */
-  .cards{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:26px;
-    align-items:stretch;
-  }
-
-  .mode-card{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:30px 28px;
-    box-shadow:var(--shadow);
-    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-  }
-
-  .mode-card::before{
-    content:"";
-    position:absolute;
-    inset:0 0 auto 0;
-    height:4px;
-    border-radius:var(--radius) var(--radius) 0 0;
-    background:linear-gradient(90deg, var(--brand), var(--brand-2));
-    opacity:0;
-    transition:opacity .22s ease;
-  }
-
-  .mode-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 22px 46px rgba(11,31,42,.13);
-    border-color:#c4dbe4;
-  }
-  .mode-card:hover::before{opacity:1;}
-
-  .mode-icon{
-    width:48px;
-    height:48px;
-    border-radius:13px;
-    display:grid;
-    place-items:center;
-    background:rgba(14,143,143,.11);
-    color:var(--brand);
-    font-size:1.25rem;
-  }
-
-  .mode-card h3{font-size:1.18rem;}
-
-  .mode-card > p{
-    color:var(--ink-soft);
-    font-size:.92rem;
-  }
-
-  .feature-list{
-    list-style:none;
-    margin:4px 0 8px;
-    padding:0;
-    display:grid;
-    gap:10px;
-    font-size:.9rem;
-    color:var(--ink-soft);
-  }
-
-  .feature-list li{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    line-height:1.45;
-  }
-
-  .feature-list li::before{
-    content:"✓";
-    flex:none;
-    font-weight:800;
-    color:var(--brand);
-  }
-
-  .mode-card .btn{margin-top:auto;}
-
-  .mode-tag{
-    position:absolute;
-    top:22px;
-    right:22px;
-    font-size:.66rem;
-    font-weight:800;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--brand-2);
-    background:rgba(11,107,203,.1);
-    border-radius:999px;
-    padding:4px 10px;
-  }
-
-  /* ===================== DEMO / QUESTION ===================== */
-  .demo{
-    background:#fff;
-    border-block:1px solid var(--line);
-  }
-
-  .demo-shell{
-    max-width:900px;
-    margin-inline:auto;
-  }
-
-  .demo-tabs{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-    padding:6px;
-    background:var(--bg);
-    border:1px solid var(--line);
-    border-radius:999px;
-    width:fit-content;
-    margin:0 auto 28px;
-  }
-
-  .tab{
-    font-family:inherit;
-    font-size:.87rem;
-    font-weight:600;
-    color:var(--ink-soft);
-    background:transparent;
-    border:none;
-    border-radius:999px;
-    padding:10px 20px;
-    cursor:pointer;
-    transition:.18s ease;
-    white-space:nowrap;
-  }
-
-  .tab:hover{color:var(--ink);}
-
-  .tab.is-active{
-    background:#fff;
-    color:var(--brand-2);
-    box-shadow:0 4px 12px rgba(11,31,42,.1);
-  }
-
-  .qcard{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:28px;
-  }
-
-  .qcard-top{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:14px;
-    padding-bottom:18px;
-    border-bottom:1px solid var(--line);
-    margin-bottom:20px;
-  }
-
-  .badge{
-    font-size:.7rem;
-    font-weight:800;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:#fff;
-    background:linear-gradient(135deg, var(--brand), var(--brand-2));
-    border-radius:999px;
-    padding:5px 12px;
-  }
-
-  .qcard-meta{
-    margin-left:auto;
-    font-size:.82rem;
-    color:var(--ink-soft);
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-
-  .qcard-meta b{color:var(--ink);}
-
-  /* Mode-specific bits — hidden unless the card has that mode */
-  .only-cat, .only-tutor, .only-exam{display:none;}
-
-  [data-mode="cat"] .only-cat,
-  [data-mode="tutor"] .only-tutor,
-  [data-mode="exam"] .only-exam{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-  }
-
-  .stem{
-    font-size:.97rem;
-    margin-bottom:20px;
-  }
-
-  .stem strong{color:var(--brand-2);}
-
-  .matrix{
-    width:100%;
-    border-collapse:collapse;
-    font-size:.87rem;
-    margin-bottom:22px;
-  }
-
-  .matrix th,
-  .matrix td{
-    border:1px solid var(--line);
-    padding:11px 12px;
-    text-align:center;
-    vertical-align:middle;
-  }
-
-  .matrix thead th{
-    background:var(--bg);
-    font-size:.78rem;
-    font-weight:700;
-    letter-spacing:.03em;
-    color:var(--ink-soft);
-    text-transform:uppercase;
-  }
-
-  .matrix th:first-child,
-  .matrix td:first-child{
-    text-align:left;
-    font-weight:500;
-    color:var(--ink);
-  }
-
-  .matrix tbody tr:hover{background:#fafdfe;}
-
-  .matrix input[type="radio"]{
-    appearance:none;
-    -webkit-appearance:none;
-    width:19px;
-    height:19px;
-    border-radius:50%;
-    border:2px solid #c3d4dd;
-    background:#fff;
-    cursor:pointer;
-    transition:.15s ease;
-    display:inline-block;
-    vertical-align:middle;
-  }
-
-  .matrix input[type="radio"]:hover{border-color:var(--brand);}
-
-  .matrix input[type="radio"]:checked{
-    border-color:var(--brand);
-    background:radial-gradient(circle, var(--brand) 0 45%, #fff 46%);
-  }
-
-  .qcard-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    align-items:center;
-    padding-top:18px;
-    border-top:1px solid var(--line);
-  }
-
-  .qcard-actions .spacer{margin-left:auto;}
-
-  .rationale{
-    display:none;
-    margin-top:20px;
-    background:rgba(14,143,143,.06);
-    border:1px solid rgba(14,143,143,.25);
-    border-left:4px solid var(--brand);
-    border-radius:12px;
-    padding:18px 20px;
-    font-size:.89rem;
-    color:var(--ink-soft);
-  }
-
-  [data-mode="tutor"] .rationale{display:block;}
-
-  .rationale h4{
-    font-size:.78rem;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--brand);
-    margin-bottom:8px;
-  }
-
-  .rationale p + p{margin-top:10px;}
-
-  /* ===================== BOOTCAMP PLAN ===================== */
-  .plan{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:20px;
-  }
-
-  .plan-step{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:26px 22px;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-
-  .plan-step:hover{
-    transform:translateY(-4px);
-    box-shadow:var(--shadow);
-  }
-
-  .step-num{
-    display:grid;
-    place-items:center;
-    width:36px;
-    height:36px;
-    border-radius:10px;
-    background:linear-gradient(135deg, var(--brand), var(--brand-2));
-    color:#fff;
-    font-weight:800;
-    font-size:.9rem;
-    margin-bottom:16px;
-  }
-
-  .plan-step h3{font-size:1rem;margin-bottom:8px;}
-  .plan-step p{font-size:.87rem;color:var(--ink-soft);}
-
-  /* ===================== CTA ===================== */
-  .cta{
-    padding:76px 0;
-    background:linear-gradient(135deg, #0b2b3a, #0b1f2a 55%, #103b52);
-    color:#fff;
-    text-align:center;
-  }
-
-  .cta h2{
-    font-size:clamp(1.7rem, 3.2vw, 2.4rem);
-    margin-bottom:16px;
-  }
-
-  .cta p{
-    color:rgba(255,255,255,.72);
-    max-width:560px;
-    margin:0 auto 32px;
-    font-size:1.02rem;
-  }
-
-  .cta-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    justify-content:center;
-  }
-
-  .cta .btn-ghost{
-    background:transparent;
-    border-color:rgba(255,255,255,.35);
-    color:#fff;
-  }
-  .cta .btn-ghost:hover{
-    border-color:#fff;
-    color:#fff;
-  }
-
-  /* ===================== FOOTER ===================== */
-  .site-footer{
-    background:#081820;
-    color:rgba(255,255,255,.62);
-    padding:52px 0 30px;
-    font-size:.88rem;
-  }
-
-  .footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr repeat(3, 1fr);
-    gap:36px;
-    padding-bottom:34px;
-    border-bottom:1px solid rgba(255,255,255,.1);
-  }
-
-  .site-footer .logo{color:#fff;}
-
-  .footer-about p{
-    margin-top:14px;
-    max-width:280px;
-    line-height:1.65;
-  }
-
-  .footer-col h4{
-    color:#fff;
-    font-size:.8rem;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-
-  .footer-col ul{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:grid;
-    gap:9px;
-  }
-
-  .footer-col a{
-    color:rgba(255,255,255,.62);
-    text-decoration:none;
-    transition:color .15s ease;
-  }
-  .footer-col a:hover{color:#fff;}
-
-  .footer-bottom{
-    padding-top:24px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:12px;
-    font-size:.8rem;
-  }
-
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width:980px){
-    .hero-grid{grid-template-columns:1fr;gap:44px;}
-    .cards{grid-template-columns:1fr;}
-    .plan{grid-template-columns:repeat(2, 1fr);}
-    .footer-grid{grid-template-columns:1fr 1fr;}
-    .nav{display:none;}
-  }
-
-  @media (max-width:640px){
-    .section{padding:60px 0;}
-    .hero{padding:56px 0 52px;}
-    .hero-stats{gap:26px;}
-    .plan{grid-template-columns:1fr;}
-    .qcard{padding:20px;}
-    .matrix{font-size:.8rem;}
-    .matrix th, .matrix td{padding:8px 6px;}
-    .qcard-meta{margin-left:0;width:100%;}
-    .footer-grid{grid-template-columns:1fr;}
-    .header-actions .btn{padding:10px 16px;font-size:.85rem;}
-    .demo-tabs{width:100%;border-radius:16px;}
-    .tab{flex:1 1 auto;padding:10px 12px;font-size:.8rem;}
-  }
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --ink:#0B2433; --paper:#F2F7F8; --card:#FFFFFF; --line:#D5E3E6;
+  --teal:#0F8B8D; --teal-d:#0A6567; --mint:#CFEDE6; --amber:#F2B134; --muted:#4D6672;
+  --hero-bg:#0B2433; --hero-fg:#F2F7F8; --hero-card:#12364A;
+  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0A1A24;--card:#10293A;--line:#1D4057;--ink:#EAF3F5;--muted:#9CB6C1;--mint:#12433F;--teal:#3CC5C2;--teal-d:#7FE0DD;--hero-bg:#06121A;--hero-card:#0E2838}
+}
+:root[data-theme="dark"]{--paper:#0A1A24;--card:#10293A;--line:#1D4057;--ink:#EAF3F5;--muted:#9CB6C1;--mint:#12433F;--teal:#3CC5C2;--teal-d:#7FE0DD;--hero-bg:#06121A;--hero-card:#0E2838}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:.85rem 1.4rem;font:600 1rem var(--body);cursor:pointer;text-decoration:none;background:var(--amber);color:#0B2433}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
+.btn:hover{filter:brightness(1.07)}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero-bg);z-index:30}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hero-bg);color:var(--hero-fg)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 1.25rem var(--head);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.logo i{width:26px;height:26px;border-radius:7px;background:var(--teal);display:grid;place-items:center;font-style:normal;color:#fff;font-size:.95rem}
+.links{display:flex;gap:1.6rem;align-items:center}
+.links a{text-decoration:none;font-weight:500;opacity:.88}
+.links a:hover{opacity:1}
+.menu{display:none;background:none;border:2px solid currentColor;color:inherit;border-radius:8px;padding:.35rem .7rem;font:600 .95rem var(--body)}
+@media (max-width:760px){
+  .menu{display:block}
+  .links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--hero-bg);flex-direction:column;align-items:stretch;padding:1rem 20px 1.4rem;gap:1rem;border-top:1px solid #1D4057}
+  .links.open{display:flex}
+}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-fg);padding:56px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.9rem);font-weight:800;letter-spacing:-.02em}
+.hero p.lead{font-size:1.15rem;color:#B9D2DB;max-width:34rem;margin:1.2rem 0 1.8rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.ecg{display:block;width:100%;height:56px;margin-top:2.2rem}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.ecg path{animation:none;stroke-dashoffset:0}}
+.panel{background:var(--hero-card);border:1px solid #1D4057;border-radius:18px;padding:26px}
+.timer-label{margin:0;color:#9CB6C1;font-size:.95rem}
+.clock{font:800 clamp(3.2rem,9vw,4.6rem)/1 var(--head);font-variant-numeric:tabular-nums;margin:.2rem 0 .9rem}
+.t-ctrl{display:flex;gap:.6rem;flex-wrap:wrap}
+.t-ctrl select{background:#0B2433;color:inherit;border:1px solid #2A5670;border-radius:10px;padding:.7rem .8rem;font:500 1rem var(--body)}
+.t-ctrl .btn{padding:.7rem 1.1rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid #1D4057}
+.stats b{display:block;font:800 1.7rem var(--head)}
+.stats span{font-size:.85rem;color:#9CB6C1;line-height:1.3;display:block}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:36px}.hero{padding-top:40px}}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{max-width:40rem;margin-bottom:2.2rem}
+.sec-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-.015em}
+.sec-head p{color:var(--muted);margin:.8rem 0 0}
+.modes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.mode{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column}
+.mode.cat{border-top:6px solid var(--teal)}
+.mode.tutor{border-top:6px solid var(--amber)}
+.mode h3{font-size:1.6rem}
+.tag{align-self:flex-start;background:var(--mint);color:var(--teal-d);font-weight:600;font-size:.85rem;border-radius:99px;padding:.2rem .8rem;margin-bottom:1rem}
+.mode.tutor .tag{background:#FBEBC6;color:#6B4A00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mode.tutor .tag{background:#4A3A12;color:#F8D98C}}
+.mode ul{padding:0;margin:1.2rem 0 1.6rem;list-style:none;display:grid;gap:.6rem}
+.mode li{padding-left:1.7rem;position:relative}
+.mode li::before{content:"";position:absolute;left:0;top:.45em;width:.9rem;height:.9rem;border-radius:50%;background:var(--teal)}
+.mode.tutor li::before{background:var(--amber)}
+.mode .btn{margin-top:auto;align-self:flex-start;background:var(--ink);color:var(--paper)}
+@media (max-width:760px){.modes{grid-template-columns:1fr}}
+
+/* readiness */
+.ready{background:var(--mint)}
+.ready .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.gauge{background:var(--card);border-radius:18px;padding:28px;text-align:center;border:1px solid var(--line)}
+.gauge svg{width:100%;max-width:240px}
+.gauge .pct{font:800 2.6rem var(--head)}
+.gauge p{margin:.2rem 0 0;color:var(--muted)}
+.bars{display:grid;gap:16px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 44px;gap:12px;align-items:center;font-weight:500}
+.track{height:12px;border-radius:99px;background:var(--card);overflow:hidden}
+.fill{height:100%;border-radius:99px;background:var(--teal);width:0;transition:width 1s ease}
+.fill.low{background:var(--amber)}
+.bar-row em{font-style:normal;text-align:right;font-variant-numeric:tabular-nums}
+.ready .btn{margin-top:1.6rem;background:var(--ink);color:var(--paper)}
+@media (max-width:860px){.ready .grid{grid-template-columns:1fr}.bar-row{grid-template-columns:110px 1fr 40px}}
+
+/* footer */
+footer{background:var(--hero-bg);color:#B9D2DB;padding:48px 0 36px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer h4{margin:0 0 .7rem;color:#F2F7F8;font:700 1rem var(--head)}
+footer a{display:block;text-decoration:none;padding:.15rem 0}
+footer a:hover{color:#fff}
+footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid #1D4057;padding-top:1.2rem}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="#top">
-      <span class="logo-mark">NB</span>
-      NCLEX Bootcamp
-    </a>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><i>+</i> NCLEX Bootcamp</a>
+    <button class="menu" aria-expanded="false" aria-controls="links">Menu</button>
+    <div class="links" id="links">
+      <a href="#modes">Training modes</a>
+      <a href="#readiness">Readiness check</a>
+      <a href="#stats">Practice stats</a>
+      <a class="btn" href="#readiness">Start free check</a>
+    </div>
+  </div>
+</nav>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#modes">Test Modes</a>
-      <a href="#demo">Try a Question</a>
-      <a href="#bootcamp">Bootcamp Plan</a>
-      <a href="#item-types">NGN Item Types</a>
-    </nav>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Practice like it’s test day. Pass the NCLEX.</h1>
+      <p class="lead">Timed sessions, adaptive questions, and rationales that explain every answer. Build the stamina and judgment the exam rewards.</p>
+      <div class="cta">
+        <a class="btn" href="#readiness">Check my readiness</a>
+        <a class="btn ghost" href="#modes">See training modes</a>
+      </div>
+      <svg class="ecg" viewBox="0 0 600 56" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 30 H150 L170 30 L184 6 L200 52 L216 14 L228 30 H370 L390 30 L404 8 L420 50 L436 16 L448 30 H600"/>
+      </svg>
+    </div>
 
-    <div class="header-actions">
-      <a class="btn btn-ghost btn-sm" href="#demo">Log in</a>
-      <a class="btn btn-primary btn-sm" href="#cta">Start Free</a>
+    <div class="panel" id="stats">
+      <p class="timer-label">Exam prep timer</p>
+      <div class="clock" id="clock" role="timer" aria-live="off">60:00</div>
+      <div class="t-ctrl">
+        <select id="len" aria-label="Session length">
+          <option value="25">25 min</option>
+          <option value="60" selected>60 min</option>
+          <option value="120">2 hours</option>
+          <option value="300">5 hours (full exam)</option>
+        </select>
+        <button class="btn" id="go">Start</button>
+        <button class="btn ghost" id="reset">Reset</button>
+      </div>
+      <div class="stats">
+        <div><b>12,400</b><span>practice questions</span></div>
+        <div><b>86%</b><span>average pass-ready score</span></div>
+        <div><b>14 days</b><span>average study streak</span></div>
+      </div>
     </div>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">New Generation NCLEX Prep</span>
-        <h1>Train like the <span class="grad">real exam</span> — then pass it.</h1>
-        <p class="hero-lead">
-          NCLEX Bootcamp drills you on the Next Generation NCLEX with a true
-          computer adaptive engine, instant tutor-mode rationales, and
-          full-length exam simulations built around clinical judgment.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#demo">Start a CAT session</a>
-          <a class="btn btn-ghost" href="#modes">Compare test modes</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat"><b>3,200+</b><span>NGN items</span></div>
-          <div class="stat"><b>85–150</b><span>Adaptive length</span></div>
-          <div class="stat"><b>6</b><span>Case studies per test</span></div>
-        </div>
+<main>
+  <section id="modes">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Two ways to train</h2>
+        <p>Learn the content in Tutor mode, then test yourself under exam conditions in Computer Adaptive mode.</p>
       </div>
-
-      <!-- Mock adaptive card -->
-      <div class="hero-card" aria-hidden="true">
-        <div class="hc-head">
-          <span class="hc-dot"></span>
-          <span>Live CAT session</span>
-          <span class="hc-pill">Adaptive</span>
-        </div>
-
-        <p class="hc-stem">
-          The nurse is caring for a client with suspected sepsis. Which action
-          should the nurse take first?
-        </p>
-
-        <ul class="hc-options">
-          <li class="is-selected">Obtain blood cultures before antibiotics</li>
-          <li>Administer prescribed IV antibiotics</li>
-          <li>Place the client in high-Fowler's position</li>
-          <li>Recheck serum lactate in 2 hours</li>
-        </ul>
-
-        <div class="hc-foot">
-          <span>Ability estimate <b>θ +0.82</b></span>
-          <span class="hc-up">▲ difficulty rising</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ITEM TYPES ===================== -->
-  <section class="types" id="item-types">
-    <div class="container">
-      <p class="types-label">Every New Generation item type, covered</p>
-      <ul class="type-chips">
-        <li>Case Studies</li>
-        <li>Bow-Tie</li>
-        <li>Matrix / Grid</li>
-        <li>Highlight Text</li>
-        <li>Drop-Down Cloze</li>
-        <li>Extended Multiple Response</li>
-        <li>Extended Drag-and-Drop</li>
-        <li>Trend &amp; Graphic</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===================== MODES ===================== -->
-  <section class="section" id="modes">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Three ways to train</span>
-        <h2>Pick the mode that fits today's goal</h2>
-        <p>Whether you're learning the content, testing your readiness, or rehearsing exam day — there's a mode for it.</p>
-      </div>
-
-      <div class="cards">
-
-        <!-- CAT -->
-        <article class="mode-card">
-          <div class="mode-icon" aria-hidden="true">◎</div>
-          <h3>Computer Adaptive Test</h3>
-          <p>
-            Our CAT engine mirrors the real NCLEX scoring model — every correct
-            answer raises difficulty, every miss lowers it, until your ability
-            estimate stabilizes.
-          </p>
-          <ul class="feature-list">
-            <li>Item difficulty adapts after every question</li>
-            <li>Live ability estimate (θ) and confidence band</li>
-            <li>Stops at 85 or 150 items — just like the real thing</li>
-            <li>Pass-likelihood report after each session</li>
+      <div class="modes">
+        <article class="mode cat">
+          <span class="tag">Exam simulation</span>
+          <h3>Computer Adaptive</h3>
+          <p>Questions get harder or easier based on your answers, just like the real NCLEX.</p>
+          <ul>
+            <li>Question count ranges from 85 to 150</li>
+            <li>Includes Next Generation NCLEX case studies</li>
+            <li>No rationales until the session ends</li>
+            <li>Pass or fail projection after each session</li>
           </ul>
-          <a class="btn btn-primary" href="#demo">Launch CAT</a>
+          <a class="btn" href="#readiness">Start adaptive test</a>
         </article>
-
-        <!-- TUTOR -->
-        <article class="mode-card">
-          <span class="mode-tag">Most popular</span>
-          <div class="mode-icon" aria-hidden="true">✎</div>
-          <h3>Tutor Mode</h3>
-          <p>
-            Learn as you go. Submit one question at a time and get the correct
-            answer, full rationale, and clinical-judgment reasoning immediately.
-          </p>
-          <ul class="feature-list">
-            <li>Instant feedback with rationale for every option</li>
-            <li>NGN-specific "why this is the right layer" breakdowns</li>
-            <li>Pause, bookmark, and build custom quizzes</li>
-            <li>Untimed — focus on understanding, not speed</li>
+        <article class="mode tutor">
+          <span class="tag">Learn as you go</span>
+          <h3>Tutor</h3>
+          <p>Get instant feedback and a full rationale after every question.</p>
+          <ul>
+            <li>Choose topics such as pharmacology, safety, or prioritization</li>
+            <li>Read why each wrong option is wrong</li>
+            <li>Flag questions to review later</li>
+            <li>Untimed, so you can focus on understanding</li>
           </ul>
-          <a class="btn btn-ghost" href="#demo">Try Tutor Mode</a>
+          <a class="btn" href="#readiness">Start tutor session</a>
         </article>
-
-        <!-- EXAM -->
-        <article class="mode-card">
-          <div class="mode-icon" aria-hidden="true">⏱</div>
-          <h3>Exam Mode</h3>
-          <p>
-            A full dress rehearsal. Timed, non-adaptive, no feedback, and a
-            question navigator — built to replicate the pressure of test day.
-          </p>
-          <ul class="feature-list">
-            <li>Timed sessions with a visible countdown clock</li>
-            <li>No rationales until the exam is submitted</li>
-            <li>Flag &amp; review navigator across all items</li>
-            <li>Full performance report by Client Needs category</li>
-          </ul>
-          <a class="btn btn-ghost" href="#demo">Start Exam</a>
-        </article>
-
       </div>
     </div>
   </section>
 
-  <!-- ===================== DEMO QUESTION ===================== -->
-  <section class="section demo" id="demo">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Interactive preview</span>
-        <h2>See how each mode behaves</h2>
-        <p>Switch modes below — the same NGN case study question renders differently in CAT, Tutor, and Exam mode.</p>
+  <section class="ready" id="readiness">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Exam readiness check</h2>
+        <p>Answer 50 questions across the NCLEX client need categories. See where you’re strong and where to focus next.</p>
       </div>
-
-      <div class="demo-shell">
-        <div class="demo-tabs" role="tablist" aria-label="Test mode">
-          <button class="tab is-active" data-mode="cat" role="tab" aria-selected="true">Computer Adaptive</button>
-          <button class="tab" data-mode="tutor" role="tab" aria-selected="false">Tutor Mode</button>
-          <button class="tab" data-mode="exam" role="tab" aria-selected="false">Exam Mode</button>
+      <div class="grid">
+        <div class="gauge">
+          <svg viewBox="0 0 200 110" role="img" aria-label="Readiness gauge">
+            <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="var(--line)" stroke-width="16" stroke-linecap="round"/>
+            <path id="arc" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="var(--teal)" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="transition:stroke-dashoffset 1.2s ease"/>
+          </svg>
+          <div class="pct" id="pct">0%</div>
+          <p>Overall readiness</p>
         </div>
-
-        <div class="qcard" data-mode="cat">
-          <div class="qcard-top">
-            <span class="badge">NGN Case Study</span>
-            <div class="qcard-meta">
-              <span class="only-cat">Item 34 · Difficulty <b>Hard</b> · Ability θ +0.82</span>
-              <span class="only-exam">⏱ <b id="examTimer">04:12</b> remaining</span>
-              <span class="only-tutor">✓ Tutor feedback enabled</span>
-            </div>
-          </div>
-
-          <p class="stem">
-            A 68-year-old client is admitted to the medical unit with a
-            suspected urinary tract infection. The client is confused, febrile,
-            and hypotensive. <strong>For each intervention below, click to
-            specify whether it is anticipated, contraindicated, or
-            nonessential.</strong>
-          </p>
-
-          <table class="matrix">
-            <thead>
-              <tr>
-                <th scope="col">Nursing Intervention</th>
-                <th scope="col">Anticipated</th>
-                <th scope="col">Contraindicated</th>
-                <th scope="col">Nonessential</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Obtain blood cultures before starting antibiotics</td>
-                <td><input type="radio" name="r1" aria-label="Anticipated"></td>
-                <td><input type="radio" name="r1" aria-label="Contraindicated"></td>
-                <td><input type="radio" name="r1" aria-label="Nonessential"></td>
-              </tr>
-              <tr>
-                <td>Restrict oral fluids to 500 mL per day</td>
-                <td><input type="radio" name="r2" aria-label="Anticipated"></td>
-                <td><input type="radio" name="r2" aria-label="Contraindicated"></td>
-                <td><input type="radio" name="r2" aria-label="Nonessential"></td>
-              </tr>
-              <tr>
-                <td>Initiate isotonic IV fluid resuscitation per protocol</td>
-                <td><input type="radio" name="r3" aria-label="Anticipated"></td>
-                <td><input type="radio" name="r3" aria-label="Contraindicated"></td>
-                <td><input type="radio" name="r3" aria-label="Nonessential"></td>
-              </tr>
-              <tr>
-                <td>Reassess mental status and vital signs every 4 hours</td>
-                <td><input type="radio" name="r4" aria-label="Anticipated"></td>
-                <td><input type="radio" name="r4" aria-label="Contraindicated"></td>
-                <td><input type="radio" name="r4" aria-label="Nonessential"></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="qcard-actions">
-            <button class="btn btn-ghost btn-sm" type="button">⚑ Flag for review</button>
-            <span class="spacer"></span>
-            <button class="btn btn-primary btn-sm" type="button">Submit answer</button>
-          </div>
-
-          <div class="rationale">
-            <h4>Tutor Mode Rationale</h4>
-            <p>
-              <strong>Obtain blood cultures — Anticipated.</strong> Cultures must
-              be drawn before the first antibiotic dose to preserve diagnostic
-              accuracy, but they should never delay antibiotics in a
-              hemodynamically unstable client.
-            </p>
-            <p>
-              <strong>Fluid restriction — Contraindicated.</strong> Sepsis
-              requires aggressive isotonic fluid resuscitation; restriction
-              worsens hypoperfusion and end-organ damage.
-            </p>
-            <p>
-              <strong>Reassessing every 4 hours — Nonessential.</strong>
-              Frequent reassessment is expected, but a 4-hour interval is too
-              infrequent for a client with suspected sepsis.
-            </p>
-          </div>
+        <div>
+          <div class="bars" id="bars"></div>
+          <a class="btn" href="#top">Take the full check</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ===================== BOOTCAMP PLAN ===================== -->
-  <section class="section" id="bootcamp">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">The 4-week bootcamp</span>
-        <h2>From baseline to exam-ready</h2>
-        <p>A structured path that mixes adaptive testing, tutor learning, and timed simulation.</p>
-      </div>
-
-      <div class="plan">
-        <article class="plan-step">
-          <div class="step-num">1</div>
-          <h3>Baseline CAT</h3>
-          <p>Take a full adaptive diagnostic to establish your ability estimate and spot weak Client Needs categories.</p>
-        </article>
-
-        <article class="plan-step">
-          <div class="step-num">2</div>
-          <h3>Tutor Deep-Dive</h3>
-          <p>Work through NGN case studies in tutor mode, reading every rationale until clinical judgment clicks.</p>
-        </article>
-
-        <article class="plan-step">
-          <div class="step-num">3</div>
-          <h3>Exam Simulation</h3>
-          <p>Run timed exam-mode sessions weekly to build stamina, pacing, and comfort with the untimed-feeling format.</p>
-        </article>
-
-        <article class="plan-step">
-          <div class="step-num">4</div>
-          <h3>Readiness Check</h3>
-          <p>Finish with a CAT pass-likelihood report and a targeted review list for the final 72 hours.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CTA ===================== -->
-  <section class="cta" id="cta">
-    <div class="container">
-      <h2>Ready to boot camp your NCLEX?</h2>
-      <p>Start free with a 20-item adaptive set and a full tutor-mode case study. No card required.</p>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="#demo">Start free practice</a>
-        <a class="btn btn-ghost" href="#modes">Explore test modes</a>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-about">
-        <a class="logo" href="#top">
-          <span class="logo-mark">NB</span>
-          NCLEX Bootcamp
-        </a>
-        <p>Adaptive practice, tutor-mode rationales, and exam simulations built for the Next Generation NCLEX.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Practice</h4>
-        <ul>
-          <li><a href="#modes">Computer Adaptive Test</a></li>
-          <li><a href="#modes">Tutor Mode</a></li>
-          <li><a href="#modes">Exam Mode</a></li>
-          <li><a href="#item-types">NGN Item Types</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Bootcamp</h4>
-        <ul>
-          <li><a href="#bootcamp">4-Week Plan</a></li>
-          <li><a href="#cta">Study Groups</a></li>
-          <li><a href="#cta">Readiness Report</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#top">About</a></li>
-          <li><a href="#top">Contact</a></li>
-          <li><a href="#top">Privacy</a></li>
-        </ul>
-      </div>
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>NCLEX Bootcamp</h4>
+      <p>Practice, timing, and feedback for nursing graduates preparing for the NCLEX-RN.</p>
     </div>
-
-    <div class="footer-bottom">
-      <span>© 2025 NCLEX Bootcamp. Not affiliated with NCSBN®.</span>
-      <span>NCLEX® is a registered trademark of the National Council of State Boards of Nursing.</span>
+    <div>
+      <h4>Train</h4>
+      <a href="#modes">Computer Adaptive</a>
+      <a href="#modes">Tutor mode</a>
+      <a href="#readiness">Readiness check</a>
     </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#top">Contact us</a>
+      <a href="#top">Privacy</a>
+      <a href="#top">Terms</a>
+    </div>
+    <small>© 2026 NCLEX Bootcamp. Not affiliated with NCSBN. NCLEX® is a registered trademark of NCSBN.</small>
   </div>
 </footer>
 
 <script>
-  /* ---- Mode switcher ---- */
-  const tabs = document.querySelectorAll('.tab');
-  const qcard = document.querySelector('.qcard');
+// mobile menu
+var menu=document.querySelector('.menu'),links=document.getElementById('links');
+menu.addEventListener('click',function(){var o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');menu.setAttribute('aria-expanded',false)}});
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => {
-        t.classList.remove('is-active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected', 'true');
-      qcard.dataset.mode = tab.dataset.mode;
-    });
-  });
+// timer
+var clock=document.getElementById('clock'),len=document.getElementById('len'),go=document.getElementById('go'),rs=document.getElementById('reset');
+var left=60*60,tick=null;
+function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
+  return (h?h+':'+String(m).padStart(2,'0'):String(m).padStart(2,'0'))+':'+String(x).padStart(2,'0')}
+function show(){clock.textContent=fmt(left)}
+function stop(){clearInterval(tick);tick=null;go.textContent='Start'}
+go.addEventListener('click',function(){
+  if(tick){stop();go.textContent='Resume';return}
+  if(left<=0)left=len.value*60;
+  go.textContent='Pause';
+  tick=setInterval(function(){left--;show();if(left<=0){stop();go.textContent='Start';clock.textContent='Time'}},1000)});
+rs.addEventListener('click',function(){stop();left=len.value*60;show()});
+len.addEventListener('change',function(){stop();left=len.value*60;show()});
+show();
 
-  /* ---- Exam mode countdown ---- */
-  let remaining = 4 * 60 + 12;
-  const timerEl = document.getElementById('examTimer');
-
-  setInterval(() => {
-    if (remaining > 0) remaining--;
-    const m = String(Math.floor(remaining / 60)).padStart(2, '0');
-    const s = String(remaining % 60).padStart(2, '0');
-    timerEl.textContent = `${m}:${s}`;
-  }, 1000);
+// readiness
+var cats=[['Safe care',82],['Health promotion',74],['Psychosocial',68],['Physiological',58],['Pharmacology',51]];
+var bars=document.getElementById('bars');
+cats.forEach(function(c){
+  var r=document.createElement('div');r.className='bar-row';
+  r.innerHTML='<span>'+c[0]+'</span><div class="track"><div class="fill'+(c[1]<65?' low':'')+'" data-w="'+c[1]+'"></div></div><em>'+c[1]+'%</em>';
+  bars.appendChild(r)});
+var avg=Math.round(cats.reduce(function(a,c){return a+c[1]},0)/cats.length);
+function animate(){
+  document.querySelectorAll('.fill').forEach(function(f){f.style.width=f.dataset.w+'%'});
+  document.getElementById('arc').style.strokeDashoffset=100-avg;
+  document.getElementById('pct').textContent=avg+'%'}
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){animate();o.disconnect()}},{threshold:.3}).observe(document.getElementById('readiness'))
+}else animate();
 </script>
-
 </body>
 </html>
