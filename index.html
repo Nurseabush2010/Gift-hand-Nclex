@@ -250,7 +250,10 @@ footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid
 </footer>
 
 <script>
-// mobile menu
+//document.getElementById('start-adaptive').addEventListener('click', function() {
+    window.location.href = 'test.html';
+});
+ mobile menu
 var menu=document.querySelector('.menu'),links=document.getElementById('links');
 menu.addEventListener('click',function(){var o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
 links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');menu.setAttribute('aria-expanded',false)}});
