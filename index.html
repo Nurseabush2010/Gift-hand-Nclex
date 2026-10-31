@@ -234,7 +234,7 @@ footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid
     </div>
     <div>
       <h4>Train</h4>
-      <a href="#modes">Computer Adaptive</a>
+      <a id="footer-start-adaptive" href="#modes">Computer Adaptive</a>
       <a href="#modes">Tutor mode</a>
       <a href="#readiness">Readiness check</a>
     </div>
@@ -249,10 +249,23 @@ footer small{display:block;margin-top:2rem;grid-column:1/-1;border-top:1px solid
 </footer>
 
 <script>
-// mobile menu
-document.getElementById('start-adaptive').addEventListener('click', function() {
+// adaptive test redirect
+var adaptiveBtn = document.getElementById('start-adaptive');
+if (adaptiveBtn) {
+  adaptiveBtn.addEventListener('click', function(e) {
+    e.preventDefault();
     window.location.href = 'test.html';
-});
+  });
+}
+var footerAdaptiveBtn = document.getElementById('footer-start-adaptive');
+if (footerAdaptiveBtn) {
+  footerAdaptiveBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'test.html';
+  });
+}
+
+// mobile menu
 var menu=document.querySelector('.menu'),links=document.getElementById('links');
 menu.addEventListener('click',function(){var o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
 links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');menu.setAttribute('aria-expanded',false)}});
